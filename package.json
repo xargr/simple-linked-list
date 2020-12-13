@@ -4,7 +4,7 @@
   "description": "Zero dependency - Simple linked list implementation with typescript support",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "files": ["lib/*"],
+  "files": ["lib/index.js", "lib/index.d.ts"],
   "keywords": "typescript, linked-list",
   "homepage": "https://github.com/xargr/simple-linked-list",
   "bugs": "https://github.com/xargr/simple-linked-list/issues",
