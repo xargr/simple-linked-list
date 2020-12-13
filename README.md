@@ -1,0 +1,1 @@
+# Zero dependency simple linked list implementation with typescript support 

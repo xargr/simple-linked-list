@@ -1,0 +1,17 @@
+{
+  "name": "simple-linked-list",
+  "version": "1.0.0",
+  "description": "Zero dependency - Simple linked list implementation with typescript support",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.1.3"
+  },
+  "scripts": {
+    "dev": "tsc --noEmit -w src/index.ts",
+    "build": "tsc"
+  },
+  "author": "xargr (Gregory) <xargrigoris@gmail.com> (https://twitter.com/xargr)",
+  "license": "ISC"
+}
