@@ -1,9 +1,11 @@
 {
   "name": "simple-linked-list",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Zero dependency - Simple linked list implementation with typescript support",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "files": ["lib/*"],
+  "keywords": "typescript, linked-list",
   "homepage": "https://github.com/xargr/simple-linked-list",
   "bugs": "https://github.com/xargr/simple-linked-list/issues",
   "dependencies": {},
