@@ -7,15 +7,16 @@ interface LinkedNode<T> {
 
 interface List<T> {
   isEmpty(): boolean;
-  createNode(node: T): LinkedNode<T>;
   push(node: T): number;
   toString(): string;
   insert(node: T, index: number): boolean;
   get(index: number): Nullable<T>;
-  getNodeAt(index: number): Nullable<LinkedNode<T>>;
   remove(index: number): Nullable<T>;
   indexOf(predicate: T): number;
   constains(predicate: T): boolean;
+  getSize(): number;
+  traverse(): Iterator<Nullable<T>>;
+  reset(): boolean;
 }
 
 export default class LinkedList<T> implements List<T> {
@@ -26,11 +27,11 @@ export default class LinkedList<T> implements List<T> {
     return this.size === 0;
   }
 
-  createNode(node: T){
+  private createNode(node: T): LinkedNode<T> {
     return {
       node,
       next: null
-    } as LinkedNode<T>;
+    };
   }
 
   push(node: T) {
@@ -66,7 +67,17 @@ export default class LinkedList<T> implements List<T> {
     return true;
   }
 
-  getNodeAt(index: number) {
+  getSize() {
+    return this.size;
+  }
+
+  reset() {
+    this.head = null;
+    this.size = 0;
+    return this.size === 0 && this.head === null;
+  }
+
+  getNodeAt(index: number): Nullable<LinkedNode<T>> {
     if (index === undefined || index < 0 || index > this.size) {
       return null;
     };
@@ -141,6 +152,12 @@ export default class LinkedList<T> implements List<T> {
     }
 
     return str;
+  }
+
+  *traverse() {
+    for (let i = 0; i < this.size; i++){
+      yield this.get(i);
+    }
   }
 
 }
